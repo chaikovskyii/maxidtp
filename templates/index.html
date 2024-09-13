@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exchange Rate Updater</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lexend:wght@400;700&display=swap">
+</head>
+
+<body>
+<div class="container">
+    <h1 class="title">Welcome<span class="icon">💫⭐</span></h1>
+    <p class="description">Use this app to update exchange rates in Google Sheets.</p>
+
+    <div class="form">
+        <label for="update_from">Enter a date (YYYY-MM-DD):</label>
+        <input type="text" name="update_from" id="update_from" pattern="\d{4}-\d{2}-\d{2}" required
+               placeholder="YYYY-MM-DD">
+
+        <label for="update_to">Update to (YYYY-MM-DD):</label>
+        <input type="text" name="update_to" id="update_to" pattern="\d{4}-\d{2}-\d{2}" required
+               placeholder="YYYY-MM-DD">
+
+        <button onclick="sendUpdateRequest()">Update Rates</button>
+
+        <div class="success-message">
+            <p id="response-message"></p>
+            <div class="dots-container" id="dots-container">
+                <div class="dot"></div>
+                <div class="dot"></div>
+                <div class="dot"></div>
+            </div>
+            <p id="loading-message">Loading, please wait...</p>
+        </div>
+    </div>
+
+    <script src="/static/js/script.js"></script>
+</body>
+
+</html>
